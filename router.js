@@ -5,4 +5,6 @@ module.exports = function (app) {
   app.route("/api/:id").get(json.tampilbyId);
   app.route("/api/add/").post(json.addSiswa);
   app.route("/api/delete/:id").delete(json.deleteSiswa);
+  app.route("/api/ubah").put(json.updateSiswa);
+  app.route("/s").get(json.tampilgroupmatakuliah);
 };
