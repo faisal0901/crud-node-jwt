@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 var routes = require("./router");
-
+const morgan = require("morgan");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.listen(3030, () => {
@@ -10,3 +10,5 @@ app.listen(3030, () => {
 });
 routes(app);
 //routes
+app.use(morgan("dev"));
+app.use("/auth", require("./middleware"));

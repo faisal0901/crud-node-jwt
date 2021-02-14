@@ -9,7 +9,7 @@ exports.index = function (req, res) {
 exports.tampilSemua = function (req, res) {
   connection.query("SELECT * FROM siswa", function (err, rows, fields) {
     if (err) {
-      connection.log();
+      console.log(err);
     } else {
       response.ok(rows, res);
     }
