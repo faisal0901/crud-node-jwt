@@ -6,16 +6,7 @@ exports.index = function (req, res) {
   response.ok("aplikasi rest api ", res);
 };
 //menampilkan semua data
-exports.tampilSemua = function (req, res) {
-  connection.query("SELECT * FROM siswa", function (err, rows, fields) {
-    if (err) {
-      console.log(err);
-    } else {
-      response.ok(rows, res);
-    }
-    console.log(rows.Nama + fields);
-  });
-};
+
 
 exports.tampilbyId = function (req, res) {
   const { id } = req.params;
@@ -91,4 +82,13 @@ exports.tampilgroupmatakuliah = function (req, res) {
       }
     }
   );
+};
+exports.tampilSemua = function (req, res) {
+  connection.query("SELECT * FROM siswa", function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      response.ok(rows, res);
+    }
+  });
 };
